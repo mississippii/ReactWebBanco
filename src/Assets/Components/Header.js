@@ -1,26 +1,34 @@
-import React from 'react';
-import '../CSS/Header.css'
+import React ,{useState}from 'react';
+import { NavLink } from 'react-router-dom';
+import '../CSS/Header.css';
+
 const Header = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <header className="header">
-      <nav className="navbar">
-        <a href="#about" className="nav-link">About</a>
-        <div className="dropdown">
-          <button className="dropbtn">Services</button>
-          <div className="dropdown-content">
-            <a href="#service1">Service 1</a>
-            <a href="#service2">Service 2</a>
-            <a href="#service3">Service 3</a>
-          </div>
-        </div>
-        <div className="dropdown">
-          <button className="dropbtn">More</button>
-          <div className="dropdown-content">
-            <a href="#item1">Item 1</a>
-            <a href="#item2">Item 2</a>
-            <a href="#item3">Item 3</a>
-          </div>
-        </div>
+      <div className="logo">My Website</div>
+      <nav className="nav">
+        <ul className="nav-list">
+          <li className="nav-item"><NavLink to="/" activeClassName="active-link" className="nav-link">Home</NavLink></li>
+          <li className="nav-item"><NavLink to="/about" activeClassName="active-link" className="nav-link">About</NavLink></li>
+          <li className="nav-item"><NavLink to="/services" activeClassName="active-link" className="nav-link">Services</NavLink></li>
+          <li className="nav-item dropdown" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+          <span className="nav-link dropdown-toggle">Downloads</span>
+            {isDropdownOpen && (
+              <ul className="dropdown-menu">
+                <li><NavLink to="/download1" className="dropdown-link">Download 1</NavLink></li>
+                <li><NavLink to="/download2" className="dropdown-link">Download 2</NavLink></li>
+                <li><NavLink to="/download3" className="dropdown-link">Download 3</NavLink></li>
+              </ul>
+            )}
+          </li>
+          <li className="nav-item"><NavLink to="/contact" activeClassName="active-link" className="nav-link">Contact</NavLink></li>
+        </ul>
       </nav>
     </header>
   );
