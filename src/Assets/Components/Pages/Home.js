@@ -1,27 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import './..//../CSS/Home.css';
+import img1 from '../../Images/aboutbg.png';
+import img2 from '../../Images/about.jpg';
+import img3 from '../../Images/blog2.jpg';
+import img4 from '../../Images/blogs1.jpg';
 
 function Home() {
+  const [isAnimating, setIsAnimating] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating((prev) => !prev);
+    }, 10000); // Toggle every 10 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="home-container">
-      <div className="hero-section">
-        <h1>Welcome to My Website</h1>
-        <p>Your one-stop solution for all your needs.</p>
+      {/* First Section */}
+        <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
+    <div className="carousel-inner">
+      <div className="carousel-item active">
+        <img src={img1} className="d-block w-100" alt="..." />
       </div>
-      <div className="product-list">
-        <h2>Our Products</h2>
-        <div className="product-cards">
-          <div className="product-card">Product 1</div>
-          <div className="product-card">Product 2</div>
-          <div className="product-card">Product 3</div>
-          <div className="product-card">Product 4</div>
+      <div className="carousel-item">
+        <img src={img1} className="d-block w-100" alt="..." />
+      </div>
+      <div className="carousel-item">
+        <img src={img1} className="d-block w-100" alt="..." />
+      </div>
+    </div>
+    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span className="visually-hidden">Previous</span>
+    </button>
+    <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span className="carousel-control-next-icon" aria-hidden="true"></span>
+      <span className="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+      {/* Second Section */}
+      <div className="service-section">
+        <h2>Our Services</h2>
+        <div className="service-cards">
+          <div className="service-card">Service 1</div>
+          <div className="service-card">Service 2</div>
+          <div className="service-card">Service 3</div>
+          <div className="service-card">Service 4</div>
         </div>
-      </div>
-      <div className="content-section">
-        <h2>About Us</h2>
-        <p>
-          We are dedicated to providing the best services to our customers. Our products are designed with the highest quality standards to ensure customer satisfaction.
-        </p>
       </div>
     </div>
   );

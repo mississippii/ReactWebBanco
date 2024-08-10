@@ -2,19 +2,12 @@ import React from 'react';
 import '../../CSS/Service.css';
 
 const services = [
-  {
-    title: 'Service One',
-    description: 'Description for service one.',
-  },
-  {
-    title: 'Service Two',
-    description: 'Description for service two.',
-  },
-  {
-    title: 'Service Three',
-    description: 'Description for service three.',
-  },
-  // Add more services as needed
+  { title: 'Service One', description: 'Description for service one.' },
+  { title: 'Service Two', description: 'Description for service two.' },
+  { title: 'Service Three', description: 'Description for service three.' },
+  { title: 'Service Four', description: 'Description for service four.' },
+  { title: 'Service Five', description: 'Description for service five.' },
+  { title: 'Service Six', description: 'Description for service six.' },
 ];
 
 const ServiceCard = ({ title, description }) => (
@@ -23,6 +16,7 @@ const ServiceCard = ({ title, description }) => (
     <p>{description}</p>
   </div>
 );
+
 
 function Service() {
   return (

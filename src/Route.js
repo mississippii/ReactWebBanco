@@ -10,6 +10,7 @@ import Home from './Assets/Components/Pages/Home';
 import About from './Assets/Components/Pages/About';
 import Contact from './Assets/Components/Pages/Contact';
 import Service from './Assets/Components/Pages/Service';
+import Download1 from './Assets/Components/Pages/Downloand1';
 
 export default function App() {
   return (
@@ -19,7 +20,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact/>} />
-          <Route path="/services" element={<Service />} /> 
+          <Route path="/services" element={<Service />} />
+          <Route path="/download1" element={<Download1 />} />
         </Routes>
       <Footer />
       </BrowserRouter>

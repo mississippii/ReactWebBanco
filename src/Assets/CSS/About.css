@@ -1,100 +1,67 @@
 .about-container {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    color: #333;
-  }
+  width: 80%;
+  margin: auto;
+  padding: 20px;
   
-  .about-hero {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 30px;
-  }
-  
-  .about-hero h1 {
-    margin: 0;
-    font-size: 3rem;
-  }
-  
-  .about-hero p {
-    margin: 10px 0 0;
-    font-size: 1.2rem;
-  }
-  
-  .about-history,
-  .about-mission,
-  .about-values,
-  .about-team {
-    margin-bottom: 40px;
-  }
-  
-  .about-history h2,
-  .about-mission h2,
-  .about-values h2,
-  .about-team h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .about-history p,
-  .about-mission p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  
-  .about-values ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .about-values li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
-  
-  .about-team {
-    text-align: center;
-  }
-  
-  .team-members {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .team-member {
-    background: #f4f4f4;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 200px;
-    text-align: center;
-  }
-  
-  .team-member img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  .team-member h3 {
-    margin: 10px 0 5px;
-    font-size: 1.2rem;
-  }
-  
-  .team-member p {
-    margin: 0;
-    color: #666;
-  }
-  
-  @media (max-width: 768px) {
-    .team-members {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  
+}
+
+.about-brief {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-brief h1 {
+  margin-top: 0;
+  color: #333;
+}
+
+.about-brief p {
+  color: #666;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.about-board {
+  margin-top: 40px;
+}
+
+.about-board h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.board-members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.board-member {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  max-width: 200px;
+}
+
+.board-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.board-member h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.board-member p {
+  color: #666;
+}

@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logo">
-          <img className="custom-brand d-inline-block align-top" alt="Logo" src={logo} />
+          {/* <img className="custom-brand d-inline-block align-top" alt="Logo" src={logo} /> */}
         </div>
         <div className="footer-links">
           <h3>Quick Links</h3>
@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
         <div className="footer-contact">
           <h3>Contact Us</h3>
-          <p>Email: <a href="mailto:contact@company.com">contact@company.com</a></p>
+          <p>Email: <a href="mailto:contact@company.com">co@simclbd.com</a></p>
           <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
           <p>Address: 123 Business St, Business City, Country</p>
         </div>
