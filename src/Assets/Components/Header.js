@@ -26,7 +26,12 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="logo"> <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>Banco</div>
+      <div className="logo">
+        <a href="/" rel="noopener noreferrer">
+          <i className="fab fa-instagram"></i>
+        </a>
+          Banco
+      </div>
       <nav className="nav">
         <ul className="nav-list">
           <li className="nav-item"><NavLink to="/" activeClassName="active-link" className="nav-link">Home</NavLink></li>
