@@ -39,8 +39,8 @@ const Header = () => {
   {isDropdownOpen && (
     <ul className="dropdown-menu show">
       <li><NavLink to="/download1" className="dropdown-item">Download 1</NavLink></li>
-      <li><NavLink to="/download2" className="dropdown-item">Download 2</NavLink></li>
-      <li><NavLink to="/download3" className="dropdown-item">Download 3</NavLink></li>
+      <li><NavLink to="/download1" className="dropdown-item">Download 2</NavLink></li>
+      <li><NavLink to="/download1" className="dropdown-item">Download 3</NavLink></li>
     </ul>
   )}
 </li>
