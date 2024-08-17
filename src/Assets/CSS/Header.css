@@ -29,7 +29,7 @@
 }
 
 .nav-link {
-  color: rgb(3, 50, 94);
+  color: rgb(2, 2, 2);
   text-decoration: none;
   padding: 10px 15px;
   transition: background-color 0.3s;
@@ -66,4 +66,15 @@
 
 .dropdown-link:hover {
   background: #f0f0f0;
+}
+.logo img {
+  width: 65px; /* Adjust the width as needed */
+  height: auto; /* Maintains the aspect ratio */
+  /* Add more styling as necessary */
+}
+.logo a:last-child {
+  color: #000; /* Adjust the text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Adjust the font size */
+  /* Add more styling as necessary */
 }

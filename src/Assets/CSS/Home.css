@@ -1,77 +1,66 @@
-.home-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
-  padding: 50px 20px;
+/* Enhance the carousel container */
+.carousel-container {
+  max-width: 70%; /* Adjust width as needed */
+  margin: 0 auto; /* Center the carousel */
+  margin-bottom: 30px; /* Space below the carousel */
 }
 
-.goal-section {
-  width: 100%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f0f0;
+/* Enhanced Carousel */
+.enhanced-carousel {
+  max-height: 700px; /* Increased height for a more prominent display */
+  overflow: hidden;  /* Hide overflow content */
+  border-radius: 15px; /* Rounded corners for a sleek look */
+}
+.enhanced-carousel .carousel-item img {
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  height: 100%; /* Set height for the image */
+  border-radius: 15px; /* Match the border radius */
+}
+
+/* Carousel Caption */
+.carousel-caption {
+  bottom: 20px; /* Position caption near the bottom */
+}
+
+.carousel-caption-text {
   position: relative;
+  white-space: nowrap;
   overflow: hidden;
-}
-
-.goal-content {
+  height: 60px; /* Adjust height as needed */
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  transform: translateX(100%);
-  transition: transform 1s ease-in-out;
 }
 
-.goal-content.animate-scroll {
-  transform: translateX(0);
+.caption-line {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 1.5rem; /* Adjust font size as needed */
+  color: #fff; /* Font color */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Text shadow for better visibility */
+  animation: moveText 10s linear infinite; /* Move animation */
+  line-height: 1.5; /* Line height to handle multiple lines */
 }
 
-.goal-image {
-  width: 300px;
-  height: auto;
-  margin-top: 20px;
+.caption-line.highlighted {
+  font-weight: bold; /* Highlighted text style */
+  font-size: 1.8rem; /* Larger font size for highlighted text */
+  color: #f5c518; /* Highlight color */
 }
 
-.service-section {
-  width: 100%;
-  text-align: center;
+@keyframes moveText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
-.service-cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+.carousel-caption-text .caption-line.highlighted {
+  animation: moveText 10s linear infinite;
 }
 
-.service-card {
-  width: 200px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #d9e2ef;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #333;
-  transition: transform 0.3s;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-}
-.goal-slider {
-  display: flex;
-  width: calc(100% * 4); /* Adjust this based on the number of images */
-}
-
-.goal-slider.animate {
-  animation: scroll 20s linear infinite; /* Adjust duration for scrolling speed */
+.carousel-caption-text .caption-line {
+  animation: moveText 10s linear infinite;
+  animation-delay: 5s; /* Delay to start the second text animation */
 }
