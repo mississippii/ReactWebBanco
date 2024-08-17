@@ -56,7 +56,7 @@ function Home() {
         <h2 className="text-center services-title mb-4">Our Services</h2>
         <div className="row">
           <div className="service-card col-md-6 col-lg-3 mb-4">
-            <a href="/portfolio-management" rel="noopener noreferrer" className="text-decoration-none text-dark">
+            <a href="/services" rel="noopener noreferrer" className="text-decoration-none text-dark">
               <div className="card h-100 shadow-sm">
                 <img src={img2} className="card-img-top img-fluid" alt="Portfolio Management" />
                 <div className="card-body">
@@ -66,7 +66,7 @@ function Home() {
             </a>
           </div>
           <div className="service-card col-md-6 col-lg-3 mb-4">
-            <a href="/issue-management" rel="noopener noreferrer" className="text-decoration-none text-dark">
+            <a href="/service2" rel="noopener noreferrer" className="text-decoration-none text-dark">
               <div className="card h-100 shadow-sm">
                 <img src={img3} className="card-img-top img-fluid" alt="Issue Management" />
                 <div className="card-body">
@@ -76,7 +76,7 @@ function Home() {
             </a>
           </div>
           <div className="service-card col-md-6 col-lg-3 mb-4">
-            <a href="/corporate-advisory" rel="noopener noreferrer" className="text-decoration-none text-dark">
+            <a href="/service3" rel="noopener noreferrer" className="text-decoration-none text-dark">
               <div className="card h-100 shadow-sm">
                 <img src={img4} className="card-img-top img-fluid" alt="Corporate Advisory" />
                 <div className="card-body">
@@ -86,7 +86,7 @@ function Home() {
             </a>
           </div>
           <div className="service-card col-md-6 col-lg-3 mb-4">
-            <a href="/underwriting-of-shares" rel="noopener noreferrer" className="text-decoration-none text-dark">
+            <a href="/service4" rel="noopener noreferrer" className="text-decoration-none text-dark">
               <div className="card h-100 shadow-sm">
                 <img src={img1} className="card-img-top img-fluid" alt="Underwriting of Share" />
                 <div className="card-body">
