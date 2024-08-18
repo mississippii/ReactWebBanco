@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import './..//../CSS/Home.css';
 import img1 from '../../Images/aboutbg.png';
 import img2 from '../../Images/about.jpg';
@@ -33,7 +40,7 @@ function Home() {
   return (
     <div className="home-container">
       {/* First Section: Enhanced Carousel */}
-      <div className="carousel-container">
+      {/* <div className="carousel-container">
         <div id="carouselExample" className="carousel slide enhanced-carousel shadow-lg" data-bs-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
@@ -49,7 +56,23 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <Swiper spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]} className="mySwiper">
+        <SwiperSlide><img className='img-fluid' src={img1} /></SwiperSlide>
+        <SwiperSlide><img className='img-fluid' src={img2} /></SwiperSlide>
+        <SwiperSlide><img className='img-fluid' src={img3} /></SwiperSlide>
+      </Swiper>
 
       {/* Second Section: Services */}
       <div className="service-section container mt-5">
