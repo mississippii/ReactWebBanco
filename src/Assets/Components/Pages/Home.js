@@ -11,6 +11,7 @@ import img1 from '../../Images/aboutbg.png';
 import img2 from '../../Images/about.jpg';
 import img3 from '../../Images/world.jpg';
 import img4 from '../../Images/jodu.jpg';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [captionIndex, setCaptionIndex] = useState(0);
@@ -79,14 +80,16 @@ function Home() {
         <h2 className="text-center services-title mb-4">Our Services</h2>
         <div className="row">
           <div className="service-card col-md-6 col-lg-3 mb-4">
-            <a href="/services" rel="noopener noreferrer" className="text-decoration-none text-dark">
-              <div className="card h-100 shadow-sm">
+           <Link to="/services">
+            
+           <div className="card h-100 shadow-sm">
                 <img src={img2} className="card-img-top img-fluid" alt="Portfolio Management" />
                 <div className="card-body">
                   <h5 className="card-title text-center">Portfolio Management</h5>
                 </div>
               </div>
-            </a>
+           </Link>
+            
           </div>
           <div className="service-card col-md-6 col-lg-3 mb-4">
             <a href="/service2" rel="noopener noreferrer" className="text-decoration-none text-dark">
