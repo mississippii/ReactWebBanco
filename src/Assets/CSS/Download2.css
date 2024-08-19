@@ -1,70 +1,106 @@
-/* PdfDownloader.css */
+/* Download1.css */
 
-.pdf-downloader {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .category-selector {
-    margin-bottom: 20px;
-  }
-  
-  h2 {
-    color: #444;
-  }
-  
-  .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .category-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .category-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .file-list {
-    margin-top: 20px;
-  }
-  
-  h3 {
-    color: #555;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 10px;
-  }
-  
-  .file-link {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .file-link:hover {
-    color: #0056b3;
-  }
-  
+.download-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.product-type-sidebar {
+  width: 25%;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+  background-color: #f8f9fa;
+}
+
+.product-type-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.product-type-btn.active {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.product-main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.pdf-icon {
+  font-size: 3rem;
+  color: #d9534f;
+  margin-right: 1rem;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-info h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.download-icon {
+  display: block;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+.download-icon:hover {
+  color: #0056b3;
+}

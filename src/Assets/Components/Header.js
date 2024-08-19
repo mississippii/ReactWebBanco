@@ -46,7 +46,7 @@ const Header = () => {
       <div className="logo">
         <NavLink to="/" className="logo-link">
           <img src={logo} alt="Banco Logo" className="logo-image" />
-          <span className="logo-text">Banco</span>
+          {/* <span className="logo-text">Banco</span> */}
         </NavLink>
       </div>
       <nav className="nav">

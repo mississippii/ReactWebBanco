@@ -1,52 +1,84 @@
 import React, { useState } from 'react';
-import '../../CSS/Download2.css';
-function Download2() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+import '../../CSS/Download1.css';
+import { FaFilePdf, FaDownload } from 'react-icons/fa'; // PDF icon and Download icon
 
-  const categories = [
-    { name: 'Category 1', files: ['file1.pdf', 'file2.pdf'] },
-    { name: 'Category 2', files: ['file3.pdf', 'file4.pdf'] },
-    { name: 'Category 3', files: ['file5.pdf', 'file6.pdf'] },
-  ];
+const Download2 = () => {
+    const [activeType, setActiveType] = useState('BO Account Opening & Closing');
 
-  function handleCategoryClick(category) {
-    setSelectedCategory(category);
-  }
+    const handleDownload = (productName) => {
+        const element = document.createElement("a");
+        const file = new Blob([`${productName}: This is a sample download file for ${productName}.`], { type: 'text/plain' });
+        element.href = URL.createObjectURL(file);
+        element.download = `${productName}-details.txt`;
+        document.body.appendChild(element);
+        element.click();
+    };
 
-  return (
-    <div className="pdf-downloader">
-      <h1>PDF Downloader</h1>
-      <div className="category-selector">
-        <h2>Select a Category</h2>
-        <div className="button-group">
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              className="category-button"
-              onClick={() => handleCategoryClick(category)}
-            >
-              {category.name}
-            </button>
-          ))}
+    const productTypes = [
+        'BO Account Opening & Closing', 'Transfer & Transmission', 'Other'
+    ];
+
+    const products = [
+        { name: 'Product 1', type: 'BO Account Opening & Closing' },
+        { name: 'Product 2', type: 'BO Account Opening & Closing' },
+        { name: 'Product 3', type: 'BO Account Opening & Closing' },
+        { name: 'Product 4', type: 'BO Account Opening & Closing' },
+        { name: 'Product 1', type: 'BO Account Opening & Closing' },
+        { name: 'Product 2', type: 'BO Account Opening & Closing' },
+        { name: 'Product 3', type: 'BO Account Opening & Closing' },
+        { name: 'Product 3', type: 'Transfer & Transmission' },
+        { name: 'Product 4', type: 'Transfer & Transmission' },
+        { name: 'Product 5', type: 'Transfer & Transmission' },
+        { name: 'Product 6', type: 'Transfer & Transmission' },
+        { name: 'Product 4', type: 'Transfer & Transmission' },
+        { name: 'Product 1', type: 'Other' },
+        { name: 'Product 2', type: 'Other' },
+        { name: 'Product 3', type: 'Other' },
+        { name: 'Product 3', type: 'Other' },
+        { name: 'Product 2', type: 'Other' },
+        { name: 'Product 3', type: 'Other' },
+        { name: 'Product 3', type: 'Other' },
+        // Add more products as needed
+    ];
+
+    return (
+        <div className="download-container">
+            <aside className="product-type-sidebar">
+                {productTypes.map((type) => (
+                    <button
+                        key={type}
+                        onClick={() => setActiveType(type)}
+                        className={`product-type-btn ${activeType === type ? 'active' : ''}`}
+                    >
+                        {type}
+                    </button>
+                ))}
+            </aside>
+
+            <main className="product-main">
+                <header className="header">
+                    <h1>Product Showcase</h1>
+                    <p>Select a product type to view available PDFs.</p>
+                </header>
+
+                <section className="product-list">
+                    {products.filter(product => product.type === activeType).map((product) => (
+                        <div className="product-card" key={product.name}>
+                            <FaFilePdf className="pdf-icon" />
+                            <div className="product-info">
+                                <h3>{product.name}</h3>
+                                <FaDownload 
+                                    onClick={() => handleDownload(product.name)} 
+                                    className="download-icon"
+                                    size={24}
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </section>
+            </main>
         </div>
-      </div>
-
-      {selectedCategory && (
-        <div className="file-list">
-          <h3>{selectedCategory.name}</h3>
-          <ul>
-            {selectedCategory.files.map((file, index) => (
-              <li key={index}>
-                <a href={`/path/to/pdf/${file}`} download className="file-link">
-                  {file}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
-}
+    );
+};
 
 export default Download2;

@@ -1,70 +1,83 @@
 .about-container {
-  width: 80%;
-  margin: auto;
-  padding: 20px;
-  
-}
-
-.about-brief {
-  text-align: center;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background:white;
+  padding: 50px;
+  color: #333;
 }
 
 .about-brief h1 {
-  margin-top: 0;
-  color: #333;
+  font-size: 2.5em;
+  color: #444;
+  margin-bottom: 20px;
 }
 
 .about-brief p {
-  color: #666;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.6;
-}
-
-.about-board {
-  margin-top: 40px;
+  color: #555;
 }
 
 .about-board h2 {
+  font-size: 2em;
+  margin-top: 40px;
+  color: #444;
   text-align: center;
-  margin-bottom: 20px;
-  color: #333;
 }
 
 .board-members {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  margin-top: 20px;
 }
 
 .board-member {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  max-width: 200px;
-  cursor: pointer;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.board-member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .board-member img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .board-member h3 {
-  margin: 10px 0;
+  margin-bottom: 10px;
+  font-size: 1.3em;
   color: #333;
 }
 
 .board-member p {
-  color: #666;
+  color: #777;
 }
 
+.modal-content {
+  background-color: #f7f9fc;
+  border-radius: 10px;
+  padding: 20px;
+}
 
+.modal-body h5 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.modal-body p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.modal-body img {
+  border: 2px solid #ddd;
+  padding: 5px;
+}
