@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, ListGroup, Image } from 'react-bootstrap';
-import yourImage from '../../Images/about.jpg'; // Replace with your image path
+import yourImage from '../../Images/city.jpg'; // Replace with your image path
 
 const Issue = () => {
   return (
