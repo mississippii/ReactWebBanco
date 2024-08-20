@@ -1,7 +1,8 @@
 import React ,{useState,useRef,useEffect}from 'react';
-import { NavLink } from 'react-router-dom';
 import '../CSS/Header.css';
 import logo from '../../Assets/Images/Logo.jpeg';
+import { Link,NavLink } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
 
 const Header = () => {
   const [isDownloadsDropdownOpen, setIsDownloadsDropdownOpen] = useState(false);
@@ -67,7 +68,7 @@ const Header = () => {
             </span>
             {isServicesDropdownOpen && (
               <ul className="dropdown-menu">
-                <li><NavLink to="/services" className="dropdown-item" onClick={closeDropdowns}>Portfolio Management</NavLink></li>
+                <li><Nav.Link as={Link} to="/services" className="dropdown-item" onClick={closeDropdowns}>Portfolio Management</Nav.Link></li>
                 <li><NavLink to="/service2" className="dropdown-item" onClick={closeDropdowns}>Issue Management</NavLink></li>
                 <li><NavLink to="/service3" className="dropdown-item" onClick={closeDropdowns}>Corporate Advisory</NavLink></li>
                 <li><NavLink to="/service4" className="dropdown-item" onClick={closeDropdowns}>Underwriting of Share</NavLink></li>

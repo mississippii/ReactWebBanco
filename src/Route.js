@@ -15,11 +15,12 @@ import Portfolio from './Assets/Components/Pages/Portfolio';
 import Advisory from './Assets/Components/Pages/Advisory';
 import Underwriting from './Assets/Components/Pages/Undewriting';
 import Download2 from './Assets/Components/Pages/Download2';
+import Navbar from './Assets/Components/Pages/Blog';
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
