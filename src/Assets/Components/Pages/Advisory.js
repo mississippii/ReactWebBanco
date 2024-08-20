@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, ListGroup ,Image} from 'react-bootstrap';
-import yourImage from '../../Images/corporate.jpg'; // Replace with your image path
+import yourImage from '../../Images/corporate.jpg';
 
 function Advisory() {
   return (
