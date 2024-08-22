@@ -20,7 +20,7 @@ import Navbar from './Assets/Components/Pages/Blog';
 export default function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

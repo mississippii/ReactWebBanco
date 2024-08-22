@@ -2,6 +2,7 @@
 
 .download-container {
   display: flex;
+  flex-direction: row;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
@@ -103,4 +104,53 @@
 
 .download-icon:hover {
   color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .download-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .product-type-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .product-main {
+    padding: 1rem 0;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .product-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pdf-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-info h3 {
+    font-size: 1rem;
+  }
+
+  .download-icon {
+    margin-top: 0.25rem;
+  }
 }

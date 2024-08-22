@@ -1,0 +1,101 @@
+/* Basic styling for the navbar */
+.navbar {
+    background-color:transparent !important;
+  }
+  
+  /* Styling for the logo */
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    height: 100px; /* Adjust height as needed */
+    width: auto;
+  }
+  
+  /* Styling for the navbar toggler */
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"%3E%3Cpath stroke="currentColor" stroke-width="2" d="M5 7h20M5 15h20M5 23h20" /%3E%3C/svg%3E');
+  }
+  
+  /* Styling for the navbar collapse */
+  .navbar-collapse {
+    transition: max-height 0.35s ease;
+  }
+  
+  /* Dropdown styling */
+  .nav-item.dropdown .dropdown-menu {
+    display: none; /* Hide dropdown menu by default */
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .nav-item.dropdown.show .dropdown-menu {
+    display: block; /* Show dropdown menu when the dropdown is open */
+  }
+  
+  .nav-item.dropdown .dropdown-item {
+    padding: 0.5rem 1rem;
+  }
+  
+  .nav-item.dropdown .dropdown-item:hover {
+    background-color: #007bff;
+  }
+  
+  /* Ensure the dropdown opens correctly */
+  .dropdown-menu.show {
+    display: block;
+  }
+  
+  .navbar-nav .nav-link {
+    cursor: pointer;
+  }
+  
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+  }
+  
+  .dropdown-open .navbar-toggler-icon {
+    background-color: #007bff; /* Highlight color for the toggler when dropdown is open */
+  }
+  
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      flex-basis: auto;
+    }
+    .navbar-nav {
+      flex-direction: column;
+    }
+    .nav-item {
+      text-align: center;
+    }
+  }
+  
+  .navbar-collapse.show {
+    display: block !important; /* Show the items when navbar is open */
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none; /* Remove focus outline */
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"%3E%3Cpath stroke="currentColor" stroke-width="2" d="M5 7h20M5 15h20M5 23h20" /%3E%3C/svg%3E');
+  }
+  
+  /* Hide the toggler icon when the navbar is not collapsed in large screens */
+  @media (min-width: 992px) {
+    .navbar-toggler {
+      display: none; /* Hide toggler icon on large screens */
+    }
+  }
+  
