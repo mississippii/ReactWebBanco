@@ -1,42 +1,88 @@
-.about-container {
-  background:white;
-  padding: 50px;
-  color: #333;
+.about-page {
+  background-color: #f7f9fc;
+  padding: 40px;
 }
 
-.about-brief h1 {
-  font-size: 2.5em;
-  color: #444;
+.about-company {
+  display: flex;
+  align-items:center;
+  margin-bottom: 50px;
+  background-color: #ffffff;
+  padding: 0px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  width: 1000px;
+}
+
+.company-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
   margin-bottom: 20px;
 }
 
-.about-brief p {
+.company-text {
+  flex: 1;
+  margin-left: 30px;
+}
+
+.company-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.company-text p {
   font-size: 1.1em;
   line-height: 1.6;
   color: #555;
 }
 
+.about-board {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
 .about-board h2 {
   font-size: 2em;
-  margin-top: 40px;
-  color: #444;
+  color: #333;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .board-members {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* Two columns layout */
   gap: 20px;
-  margin-top: 20px;
+  justify-items: center; /* Center items horizontally */
+}
+
+.board-member.ceo {
+  grid-column: 1/ -1; /* CEO spans full width */
+  width: 400px;
+  display: flex;
+  justify-content: center; /* Center CEO vertically */
+  align-items: center; /* Center CEO horizontally */
+  padding: 20px;
 }
 
 .board-member {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(67, 2, 97, 0.1);
   text-align: center;
   padding: 20px;
   transition: transform 0.3s ease-in-out;
+  width: 400px; /* Adjusted width */
+  height: 250px; /* Adjusted height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
 }
 
 .board-member:hover {
@@ -45,15 +91,15 @@
 }
 
 .board-member img {
-  width: 100px;
-  height: 100px;
+  width: 100px; /* Adjusted size */
+  height: 100px; /* Adjusted size */
   border-radius: 50%;
   margin-bottom: 15px;
 }
 
 .board-member h3 {
   margin-bottom: 10px;
-  font-size: 1.3em;
+  font-size: 1.4em; /* Increased font size */
   color: #333;
 }
 
@@ -61,23 +107,101 @@
   color: #777;
 }
 
+/* Modal Styles */
+/* Modal Styles */
 .modal-content {
-  background-color: #f7f9fc;
+  background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
 }
 
-.modal-body h5 {
-  font-size: 1.5em;
-  color: #333;
+.modal-body {
+  padding: 20px;
 }
 
-.modal-body p {
-  font-size: 1.1em;
+.modal-content-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px; /* Slightly rounded corners for the image */
+  margin-right: 20px; /* Space between the image and the text */
+}
+
+.modal-text {
+  flex: 1; /* Allows the text to fill the remaining space */
+}
+
+.modal-text h5, .modal-text h6 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.modal-text p {
+  margin: 0;
+  line-height: 1.6;
   color: #555;
 }
 
-.modal-body img {
-  border: 2px solid #ddd;
-  padding: 5px;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .modal-content-wrapper {
+    flex-direction: column;
+    align-items: center; /* Center align the image and text */
+  }
+
+  .profile-picture {
+    margin-right: 0;
+    margin-bottom: 15px; /* Add space between the image and text when stacked */
+  }
+
+  .modal-text {
+    text-align: center;
+  }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .board-members {
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-company {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .company-text {
+    margin-left: 0;
+  }
+  
+  .board-members {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+  }
+  
+  .board-member.ceo {
+    grid-column: span 1; /* CEO still takes full width in mobile view */
+  }
+
+  .board-member {
+    width: 100%; /* Full width for mobile */
+    max-width: 300px; /* Maximum width */
+  }
+}
+
+@media (max-width: 480px) {
+  .board-member {
+    width: 100%; /* Full width for smaller mobile screens */
+    max-width: 250px; /* Maximum width for smaller screens */
+  }
+
+  .modal-content {
+    width: 90%; /* Responsive width for modal */
+  }
 }

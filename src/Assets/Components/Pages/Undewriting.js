@@ -15,7 +15,8 @@ function Undewriting() {
                 <Card.Body>
                   <Card.Title as="h2" className="text-primary mb-4">Underwriting of Shares</Card.Title>
                   <Card.Text className="text-muted mb-4">
-                    The risks of under subscription of public offerings are mitigated through underwriting. We are a licensed underwriter approved by the Bangladesh Securities and Exchange Commission (BSEC). Underwriting services are offered to companies desiring to go public through different forms, such as IPO, RPO, and Rights Issue.
+                  The Risks of under subscription of public offering are mitigated through underwriting. We are licensed underwriter approved by the Bangladesh Securities and Exchange Commission (BSEC).
+                  Underwriting services are offered to the companies desired to go for public issues in different form, such as IPO, RPO and Rights Issue. Issues underwritten by SIM Capital Limited are as under:
                   </Card.Text>
                 </Card.Body>
               </Col>
