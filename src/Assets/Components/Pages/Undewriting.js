@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, ListGroup,Image } from 'react-bootstrap';
-import img1 from '../../Images/share.jpg';
+import img1 from '../../Images/stock20.jpg';
 function Undewriting() {
   return (
     <Container className="my-5">

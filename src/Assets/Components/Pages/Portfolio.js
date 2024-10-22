@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, Image } from 'react-bootstrap';
-import img1 from '../../Images/city.jpg'
+import img1 from '../../Images/stock11.png'
 
 function Portfolio() {
   return (

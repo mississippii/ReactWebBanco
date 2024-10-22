@@ -4,13 +4,13 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import '../../CSS/Home.css';
-import img1 from '../../Images/aboutbg.png';
-import img2 from '../../Images/insurancr.jpg';
-import img3 from '../../Images/strategy.jpg';
-import img4 from '../../Images/city.jpg';
+import img1 from '../../Images/stock1.png';
+import img2 from '../../Images/aboutbg.png';
+import img3 from '../../Images/businesswoman.jpg';
+import img4 from '../../Images/stock11.png';
 import img5 from '../../Images/handshake.jpg';
-import img6 from '../../Images/corporate.jpg';
-import img7 from '../../Images/share.jpg';
+import img6 from '../../Images/stock2.jpg';
+import img7 from '../../Images/stock20.jpg';
 import { Link } from 'react-router-dom';
 
 function Home() {

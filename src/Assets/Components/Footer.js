@@ -21,8 +21,8 @@ const Footer = () => {
         <div className="footer-contact">
         <h3 class="text-danger font-weight-bold mb-4 text-uppercase">Contuct Us</h3>
           <p>Email: <a href="mailto:contact@company.com">co@simclbd.com</a></p>
-          <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
-          <p>Address: 4th Floor LIFT - 4 Motahar lodge, 4 Purana Paltan</p>
+          <p>Phone: <a href="tel:+1234567890">+88 02-226 639248</a></p>
+          <p>Address: 4th Floor LIFT - 4 Motahar lodge, 4 Purana Paltan, Dhaka-1000</p>
         </div>
         <div className="footer-social">
         <h3 class="text-danger font-weight-bold mb-4 text-uppercase">Follow Us</h3>
