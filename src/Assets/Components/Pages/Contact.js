@@ -14,7 +14,7 @@ function Contact() {
         <div className="contact-info">
           <h2>Contact Information</h2>
           <p><strong>Email:</strong> <a href="mailto:co@simclbd.com">co@simclbd.com</a></p>
-          <p><strong>Phone:</strong> <a href="tel:+1234567890">+123 456 7890</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+1234567890">+88 02-226 639248</a></p>
           <p><strong>Address:</strong> 4th Floor LIFT - 4 Motahar lodge, 4 Purana Paltan</p>
         </div>
       </section>

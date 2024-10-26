@@ -8,7 +8,7 @@ import img1 from '../../Images/stock1.png';
 import img2 from '../../Images/aboutbg.png';
 import img3 from '../../Images/businesswoman.jpg';
 import img4 from '../../Images/stock11.png';
-import img5 from '../../Images/handshake.jpg';
+import img5 from '../../Images/issiemenegment.jpg';
 import img6 from '../../Images/stock2.jpg';
 import img7 from '../../Images/stock20.jpg';
 import { Link } from 'react-router-dom';

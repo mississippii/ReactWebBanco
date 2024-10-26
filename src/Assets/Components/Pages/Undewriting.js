@@ -23,7 +23,7 @@ function Undewriting() {
             </Row>
             <Card.Body>
               <Card.Text className="text-muted mb-4">
-                Issues underwritten by Alpha Capital Management Limited include:
+                Issues underwritten by SIM Capital Limited include:
               </Card.Text>
               <ListGroup variant="flush">
               <ListGroup.Item className="py-2">Master Feed Agrotec Limited</ListGroup.Item>
