@@ -25,7 +25,7 @@ function Undewriting() {
               <Card.Text className="text-muted mb-4">
                 Issues underwritten by SIM Capital Limited include:
               </Card.Text>
-              <ListGroup variant="flush">
+              {/* <ListGroup variant="flush">
               <ListGroup.Item className="py-2">Master Feed Agrotec Limited</ListGroup.Item>
                     <ListGroup.Item className="py-2">Golden Harvest Agro Industries Limited</ListGroup.Item>
                     <ListGroup.Item className="py-2">Esquire Knit Composite Limited</ListGroup.Item>
@@ -56,7 +56,7 @@ function Undewriting() {
                     <ListGroup.Item className="py-2">Mozaffar Hossain Spinning Mills Limited</ListGroup.Item>
                     <ListGroup.Item className="py-2">United Airways (BD) Limited</ListGroup.Item>
                     <ListGroup.Item className="py-2">Aamra Technologies Limited</ListGroup.Item>
-              </ListGroup>
+              </ListGroup> */}
             </Card.Body>
           </Card>
         </Col>
