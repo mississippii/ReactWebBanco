@@ -11,6 +11,24 @@ import img4 from '../../Images/stock11.png';
 import img5 from '../../Images/issiemenegment.jpg';
 import img6 from '../../Images/stock2.jpg';
 import img7 from '../../Images/stock20.jpg';
+import logo1 from '../../Images/BMBA Logo.jpg'
+import logo2 from '../../Images/BSEC Logo.jpg'
+import logo3 from '../../Images/CDBL Logo.jpg'
+import logo4 from '../../Images/DSE Logo.jpg'
+import LovelloLogo from '../../Images/Lovello Logo.jpg';
+import BBSLogo from '../../Images/BBS Cables Logo.jpg';
+import BIFCLLogo from '../../Images/BIFCL Logo.jpg';
+import DeltaLogo from '../../Images/Delta Logo.jpg';
+import FamilyTexLogo from '../../Images/Family Tex Logo.jpg';
+import GoldenHarvestLogo from '../../Images/Golden Harvest Logo.jpg';
+import GPHIspatLogo from '../../Images/GPH Ispat Logo.jpg';
+import IfadLogo from '../../Images/Ifad Logo.jpg';
+import RoyalTulipLogo from '../../Images/Royal Tulip Logo.jpg';
+import SaifPowerLogo from '../../Images/Saif Power Logo.jpg';
+import SIBLLogo from '../../Images/SIBL Logo.jpg';
+import SunlifeLogo from '../../Images/Sunlife Logo.jpg';
+import TallySpinLogo from '../../Images/Tally Spin Logo.jpg';
+
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -129,6 +147,45 @@ function Home() {
           </div>
         </div>
       </div>
+      {/*Stackholder section*/}
+      <div className="key-stakeholders">
+        <div className="container">
+          <div className="logo-container">
+            <img src={logo1} alt="Stakeholder 1" className="stakeholder-logo" />
+            <img src={logo2} alt="Stakeholder 2" className="stakeholder-logo" />
+            <img src={logo3} alt="Stakeholder 3" className="stakeholder-logo" />
+            <img src={logo4} alt="Stakeholder 4" className="stakeholder-logo" />
+          </div>
+        </div>
+      </div>
+
+      {/*Achivement section*/}
+      <div className="achievements-section container mt-5">
+        <h2 className="text-center achievements-title mb-4">Our Achievements</h2>
+        <p className="text-center achievements-description mb-5">
+          We are proud of the milestones we have achieved in the industry.
+          Below are some of our key recognitions and partnerships.
+        </p>
+        <div className="achievements-logos">
+          <div className="logo-container1">
+            <img src={LovelloLogo} alt="Achievement 1" className="achievement-logo" />
+            <img src={BBSLogo} alt="Achievement 2" className="achievement-logo" />
+            <img src={BIFCLLogo} alt="Achievement 3" className="achievement-logo" />
+            <img src={DeltaLogo} alt="Achievement 4" className="achievement-logo" />
+            <img src={FamilyTexLogo} alt="Achievement 4" className="achievement-logo" />
+            <img src={GoldenHarvestLogo} alt="Achievement 4" className="achievement-logo" />
+            <img src={GPHIspatLogo} alt="Achievement 4" className="achievement-logo" />
+            <img src={IfadLogo} alt="Achievement 4" className="achievement-logo" />
+            <img src={RoyalTulipLogo} alt="Achievement 4" className="achievement-logo" />
+            <img src={SaifPowerLogo} alt="Achievement 4" className="achievement-logo" />
+            <img src={SIBLLogo} alt="Achievement 4" className="achievement-logo" />
+            <img src={SunlifeLogo} alt="Achievement 4" className="achievement-logo" />
+            <img src={TallySpinLogo} alt="Achievement 4" className="achievement-logo" />
+          </div>
+        </div>
+      </div>
+
+
     </div>
   );
 }

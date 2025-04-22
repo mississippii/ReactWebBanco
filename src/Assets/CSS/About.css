@@ -1,207 +1,277 @@
+/* About.css */
+
+:root {
+  --primary-color: #1a237e;
+  --accent-color: #4CAF50;
+  --dark-gray: #2d3436;
+  --light-gray: #f5f6fa;
+}
+
+/* Base Styles */
 .about-page {
-  background-color: #f7f9fc;
-  padding: 40px;
-}
-
-.about-company {
-  display: flex;
-  align-items:center;
-  margin-bottom: 50px;
-  background-color: #ffffff;
-  padding: 0px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-  width: 1000px;
-}
-
-.company-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.company-text {
-  flex: 1;
-  margin-left: 30px;
-}
-
-.company-text h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.company-text p {
-  font-size: 1.1em;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark-gray);
   line-height: 1.6;
-  color: #555;
 }
 
-.about-board {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.about-board h2 {
-  font-size: 2em;
-  color: #333;
-  text-align: center;
-  margin-bottom: 30px;
+/* Hero Section */
+.company-hero {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
 
-.board-members {
+.hero-content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns layout */
-  gap: 20px;
-  justify-items: center; /* Center items horizontally */
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
 }
 
-.board-member.ceo {
-  grid-column: 1/ -1; /* CEO spans full width */
-  width: 400px;
-  display: flex;
-  justify-content: center; /* Center CEO vertically */
-  align-items: center; /* Center CEO horizontally */
-  padding: 20px;
+.hero-text {
+  max-width: 600px;
 }
 
-.board-member {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(67, 2, 97, 0.1);
-  text-align: center;
-  padding: 20px;
-  transition: transform 0.3s ease-in-out;
-  width: 400px; /* Adjusted width */
-  height: 250px; /* Adjusted height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
+.hero-title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
-.board-member:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+.hero-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
 }
 
-.board-member img {
-  width: 100px; /* Adjusted size */
-  height: 100px; /* Adjusted size */
-  border-radius: 50%;
-  margin-bottom: 15px;
+.hero-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-.board-member h3 {
-  margin-bottom: 10px;
-  font-size: 1.4em; /* Increased font size */
-  color: #333;
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.board-member p {
-  color: #777;
-}
-
-/* Modal Styles */
-/* Modal Styles */
-.modal-content {
+/* Leadership Section */
+.leadership-section {
+  padding: 80px 0;
   background-color: #ffffff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.leader-card {
+  background: white;
   border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.leader-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card-image {
+  position: relative;
+  height: 350px;
+  background: #f5f5f5;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent 0%, rgba(0,0,0,0.7) 100%);
   padding: 20px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.leader-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.view-profile {
+  font-weight: 500;
+  display: block;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.leader-card:hover .view-profile {
+  transform: translateY(0);
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.leader-name {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.leader-title {
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Profile Modal */
+.profile-modal {
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  max-width: 800px;
+  width: 90%;
+}
+
+.profile-modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  padding: 30px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: var(--primary-color);
 }
 
 .modal-body {
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
 }
 
-.modal-content-wrapper {
-  display: flex;
-  align-items: flex-start; /* Align items to the top */
+.profile-image {
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.profile-picture {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px; /* Slightly rounded corners for the image */
-  margin-right: 20px; /* Space between the image and the text */
+.profile-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.modal-text {
-  flex: 1; /* Allows the text to fill the remaining space */
+.designation {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-weight: 600;
 }
 
-.modal-text h5, .modal-text h6 {
-  margin-top: 0;
-  margin-bottom: 10px;
+.bio-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 15px;
 }
 
-.modal-text p {
-  margin: 0;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .modal-content-wrapper {
-    flex-direction: column;
-    align-items: center; /* Center align the image and text */
-  }
-
-  .profile-picture {
-    margin-right: 0;
-    margin-bottom: 15px; /* Add space between the image and text when stacked */
-  }
-
-  .modal-text {
-    text-align: center;
-  }
-}
-
-
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
-  .board-members {
-    grid-template-columns: repeat(2, 1fr); /* Two columns layout for tablets */
-  }
+.bio-text {
+  line-height: 1.8;
+  color: #444;
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {
-  .about-company {
-    flex-direction: column;
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
     text-align: center;
   }
-  
-  .company-text {
-    margin-left: 0;
-  }
-  
-  .board-members {
-    grid-template-columns: 1fr; /* Single column layout for mobile */
-  }
-  
-  .board-member.ceo {
-    grid-column: span 1; /* CEO still takes full width in mobile view */
+
+  .modal-body {
+    grid-template-columns: 1fr;
   }
 
-  .board-member {
-    width: 100%; /* Full width for mobile */
-    max-width: 300px; /* Maximum width */
+  .profile-image {
+    max-width: 250px;
+    margin: 0 auto 20px;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .board-member {
-    width: 100%; /* Full width for smaller mobile screens */
-    max-width: 250px; /* Maximum width for smaller screens */
+  .hero-title {
+    font-size: 2rem;
   }
 
-  .modal-content {
-    width: 90%; /* Responsive width for modal */
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
   }
 }

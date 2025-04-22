@@ -48,7 +48,10 @@ const Header = () => {
     <header className="header">
       <div className="logo">
         <NavLink to="/" className="logo-link">
-          <img src={logo} alt="Banco Logo" className="logo-image" />
+          <div className="logo-flex">
+            <img src={logo} alt="Banco Logo" className="logo-image" />
+            <span className="company-name">SIM Capital Ltd..</span>
+          </div>
         </NavLink>
       </div>
       <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>

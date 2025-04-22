@@ -122,4 +122,90 @@
   margin: 0;
   font-size: 1.2rem;
 }
+.key-stakeholders {
+  position: relative;
+  width: 100%;
+  background-color: #f8f9fa; /* Light background for the logos section */
+  padding: 20px 0; /* Adjust padding as necessary */
+  bottom: 0;
+  box-shadow: none; /* Remove shadow */
+}
 
+.key-stakeholders .container {
+  display: flex;
+  justify-content: center;
+}
+
+.key-stakeholders .logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px; /* Adjust the gap between logos */
+}
+
+.stakeholder-logo {
+  height: 80px; /* Increase size of the logos */
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.stakeholder-logo:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* "Our Achievements" Section */
+
+/* "Our Achievements" Section */
+.achievements-section {
+  padding: 40px 0;
+  background-color: transparent; /* Light background */
+}
+
+.achievements-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
+}
+
+.achievements-description {
+  font-size: 16px;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center; /* Center the description */
+}
+
+.achievements-logos .logo-container {
+  display: flex;
+  justify-content: center; /* Center the logos horizontally */
+  align-items: center; /* Center logos vertically */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 30px; /* Space between logos */
+  margin-top: 20px;
+}
+
+.achievement-logo {
+  width: 150px; /* Adjust the size */
+  height: auto;
+  transition: transform 0.3s ease;
+  object-fit: contain;
+}
+
+.achievement-logo:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .achievements-logos .logo-container {
+    flex-direction: row; /* Keep them in a row on mobile too */
+    align-items: center;
+    gap: 20px; /* Adjust the space for mobile */
+  }
+  .achievement-logo {
+    width: 120px; /* Slightly smaller on mobile */
+    margin-bottom: 20px;
+  }
+}

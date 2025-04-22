@@ -9,8 +9,8 @@
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+  position: relative;
+  display: inline-block;
 }
 
 .menu-icon {
@@ -48,7 +48,7 @@
 
 .nav-link:hover,
 .active-link {
-  color: black;
+  color: blue;
   background-color: white;
   border-radius: 4px;
 }
@@ -68,20 +68,34 @@
 }
 
 .dropdown-link {
-  color: #000;
+  font-size: 16px; /* Set your desired consistent font size */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Or your preferred font */
+  color: rgb(2, 2, 2);
   text-decoration: none;
-  display: block;
-  padding: 10px;
-  transition: background 0.3s;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
 }
 
 .dropdown-link:hover {
   background: #f0f0f0;
 }
-
+.logo-flex {
+  display: flex;
+  align-items: flex-end; /* Align text to the bottom of the image */
+  gap: 0cm; /* Add space between logo and text */
+}
 .logo img {
-  width: 130px;
+  width: 160px;
   height: auto;
+}
+.company-name {
+  font-size: 18px;
+  font-weight: 600;
+  font-family:  'Georgia', serif;
+  color: #003366;
+  border-radius: 4px;
+  /* Align better with bottom of logo */
+  padding: 2px 6px 4px;
 }
 
 .logo a:last-child {
