@@ -7,7 +7,7 @@ import '../../CSS/Home.css';
 import img1 from '../../Images/stock1.png';
 import img2 from '../../Images/aboutbg.png';
 import img3 from '../../Images/businesswoman.jpg';
-import img4 from '../../Images/stock11.png';
+import img4 from '../../Images/stock11.jpg';
 import img5 from '../../Images/issiemenegment.jpg';
 import img6 from '../../Images/stock2.jpg';
 import img7 from '../../Images/stock20.jpg';
@@ -100,6 +100,25 @@ function Home() {
           </div>
         </SwiperSlide>
       </Swiper>
+      {/*Stackholder section*/}
+      <div className="key-stakeholders">
+        <h1 className="text-center section-title mb-4">Trusted Partners</h1>
+        <div className="logo-track">
+          <div className="logo-container">
+            <img src={logo1} alt="Stakeholder 1" className="stakeholder-logo" />
+            <img src={logo2} alt="Stakeholder 2" className="stakeholder-logo" />
+            <img src={logo3} alt="Stakeholder 3" className="stakeholder-logo" />
+            <img src={logo4} alt="Stakeholder 4" className="stakeholder-logo" />
+          </div>
+          {/* Mirror container for seamless loop */}
+          <div className="logo-container" aria-hidden="true">
+            <img src={logo1} alt="Stakeholder 1" className="stakeholder-logo" />
+            <img src={logo2} alt="Stakeholder 2" className="stakeholder-logo" />
+            <img src={logo3} alt="Stakeholder 3" className="stakeholder-logo" />
+            <img src={logo4} alt="Stakeholder 4" className="stakeholder-logo" />
+          </div>
+        </div>
+      </div>
 
       {/* Second Section: Services */}
       <div className="service-section container mt-5">
@@ -147,17 +166,7 @@ function Home() {
           </div>
         </div>
       </div>
-      {/*Stackholder section*/}
-      <div className="key-stakeholders">
-        <div className="container">
-          <div className="logo-container">
-            <img src={logo1} alt="Stakeholder 1" className="stakeholder-logo" />
-            <img src={logo2} alt="Stakeholder 2" className="stakeholder-logo" />
-            <img src={logo3} alt="Stakeholder 3" className="stakeholder-logo" />
-            <img src={logo4} alt="Stakeholder 4" className="stakeholder-logo" />
-          </div>
-        </div>
-      </div>
+
 
       {/*Achivement section*/}
       <div className="achievements-section container mt-5">

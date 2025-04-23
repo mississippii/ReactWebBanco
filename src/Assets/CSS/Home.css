@@ -122,38 +122,94 @@
   margin: 0;
   font-size: 1.2rem;
 }
-.key-stakeholders {
+/* Add this CSS for the title */
+.section-title {
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+  font-weight: 700;
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  text-transform: capitalize;
   position: relative;
-  width: 100%;
-  background-color: #f8f9fa; /* Light background for the logos section */
-  padding: 20px 0; /* Adjust padding as necessary */
+  padding-bottom: 0.5em;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
   bottom: 0;
-  box-shadow: none; /* Remove shadow */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #4299e1; /* Accent color */
+  border-radius: 2px;
 }
 
-.key-stakeholders .container {
-  display: flex;
-  justify-content: center;
+/* Add this to your CSS imports or HTML head */
+/* <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"> */
+.key-stakeholders {
+  overflow: hidden;
+  padding: 2rem 0;
+  background: transparent;
+  position: relative;
 }
 
-.key-stakeholders .logo-container {
+.logo-track {
   display: flex;
+  width: 200%; /* Double width for seamless transition */
+  animation: scroll 20s linear infinite;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  gap: 50px; /* Adjust the gap between logos */
+  width: 50%; /* Half of track width */
+  gap: 4rem; /* Control spacing between logos */
+  padding: 1rem 0;
 }
 
 .stakeholder-logo {
-  height: 80px; /* Increase size of the logos */
-  width: auto;
+  width: 120px; /* Adjust logo size */
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
-.stakeholder-logo:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move by half width */
+  }
 }
 
-/* "Our Achievements" Section */
+/* Optional: Pause on hover */
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+/* Optional: Hover effect */
+.stakeholder-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Accessibility: Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .logo-track {
+    animation: none;
+    width: 100%;
+  }
+  .logo-container:last-child {
+    display: none;
+  }
+}
 
 /* "Our Achievements" Section */
 .achievements-section {

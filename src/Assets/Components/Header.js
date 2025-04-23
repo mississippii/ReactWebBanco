@@ -50,7 +50,7 @@ const Header = () => {
         <NavLink to="/" className="logo-link">
           <div className="logo-flex">
             <img src={logo} alt="Banco Logo" className="logo-image" />
-            <span className="company-name">SIM Capital Ltd..</span>
+            <span className="company-name">SIM Capital Limited</span>
           </div>
         </NavLink>
       </div>
