@@ -28,6 +28,9 @@ import SaifPowerLogo from '../../Images/Saif Power Logo.jpg';
 import SIBLLogo from '../../Images/SIBL Logo.jpg';
 import SunlifeLogo from '../../Images/Sunlife Logo.jpg';
 import TallySpinLogo from '../../Images/Tally Spin Logo.jpg';
+import client1logo from '../../Images/client1.jpeg';
+import client2logo from '../../Images/client2.jpeg';
+
 
 import { Link } from 'react-router-dom';
 
@@ -102,7 +105,7 @@ function Home() {
       </Swiper>
       {/*Stackholder section*/}
       <div className="key-stakeholders">
-        <h1 className="text-center section-title mb-4">Trusted Partners</h1>
+        <h1 className="text-center section-title mb-4">Our Stakeholders</h1>
         <div className="logo-track">
           <div className="logo-container">
             <img src={logo1} alt="Stakeholder 1" className="stakeholder-logo" />
@@ -172,8 +175,9 @@ function Home() {
       <div className="achievements-section container mt-5">
         <h2 className="text-center achievements-title mb-4">Our Achievements</h2>
         <p className="text-center achievements-description mb-5">
-          We are proud of the milestones we have achieved in the industry.
-          Below are some of our key recognitions and partnerships.
+          We are proud of the milestones we
+          have achieved in the industry. Here are some of the key achievements and partnerships
+          of SIM Capital Limited.
         </p>
         <div className="achievements-logos">
           <div className="logo-container1">
@@ -190,6 +194,8 @@ function Home() {
             <img src={SIBLLogo} alt="Achievement 4" className="achievement-logo" />
             <img src={SunlifeLogo} alt="Achievement 4" className="achievement-logo" />
             <img src={TallySpinLogo} alt="Achievement 4" className="achievement-logo" />
+            <img src={client1logo} alt="Achievement 4" className="achievement-logo" />
+            {/*<img src={client2logo} alt="Achievement 4" className="achievement-logo" />*/}
           </div>
         </div>
       </div>

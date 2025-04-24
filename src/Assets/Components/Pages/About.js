@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './../../CSS/About.css';
 import img1 from '../../Images/Chairman.jpg';
 import img2 from '../../Images/MD & CEO.jpg';
-import img3 from '../../Images/Director.jpg';
+import img3 from '../../Images/Director.png';
 import img4 from '../../Images/Logo.jpeg';
 
 const boardMembers = [
@@ -10,16 +10,21 @@ const boardMembers = [
     name: 'A.S.M.Rakibul Hasan',
     title: 'Chairman',
     img: img1,
-    description: `A.S.M.Rakibul Hasan is the Chairman at SIM Capital Limited, 
-                  bringing a wealth of expertise from his 15-year career with reputed institutions such as EBL and IDLC 
-                  in the Bangladesh capital market. His professional journey includes a four-year tenure at EBL SL, 
-                  where he focused on comprehensive research into economic trends, industry dynamics, and company analysis. 
-                  Following this, he spent nearly a decade at IDLC SL, assuming various roles that encompassed leading 
-                  the business development teams, driving strategic transformations, and managing institutional portfolios.
-                  Mr. Saifullah further enriched his skill set through training in leadership and investing skills, 
-                  conducted in Thailand and India. His educational background includes graduation and post-graduation 
-                  from the University of Dhaka, in areas of Finance and Economics. He loves to read books on value investing, 
-                  behavioral finance, and history.`
+    description: `A.S.M. Rakibul Hasan is currently serving as the Chairman of SIM Capital Limited. His
+                  father name is Al-Haj Md. Mozzaffar Hossain and mother name is Mrs. Rahima
+                  Hossain. He was born in Jamalpur, Bangladesh on 31-Jan-1979. He had completed his
+                  MBA from North South University (N. S. U). He is serving the company from its
+                  incorporation and successfully running till now. He has with over 21 year’s business
+                  experience. And he is also the Director of SIM Fabrics Limited.`
+  },
+  {
+    name: 'A.S. M. Raisul Hasan Shoaib',
+    title: 'Director',
+    img: img3,
+    description: `A. S. M. Raisul Hasan Shoaib is serving as Director of SIM Capital Limited. His father’s name is Al-Haj Md.
+                  Mozzaffar Hossain and mother name is Mrs. Rahima Hossain. He was born in Dhaka, Bangladesh on 06-May-1989.
+                  He is a Graduate from NSU; Bangladesh. He is a dynamic business personality. His acumen in business and 
+                  flexible manner in terms of public relations made him a role model in developing the culture of the organization.`,
   },
   {
     name: 'Khaled Saifullah',
@@ -35,15 +40,6 @@ const boardMembers = [
                   conducted in Thailand and India. His educational background includes graduation and post-graduation 
                   from the University of Dhaka, in areas of Finance and Economics. He loves to read books on value investing, 
                   behavioral finance, and history.`
-  },
-  {
-    name: 'A.S. M. Raisul Hasan Shoaib',
-    title: 'Director',
-    img: img3,
-    description: `A. S. M. Raisul Hasan Shoaib is serving as Director of SIM Capital Limited. His father’s name is Al-Haj Md.
-                  Mozzaffar Hossain and mother name is Mrs. Rahima Hossain. He was born in Dhaka, Bangladesh on 06-May-1989.
-                  He is a Graduate from NSU; Bangladesh. He is a dynamic business personality. His acumen in business and 
-                  flexible manner in terms of public relations made him a role model in developing the culture of the organization.`,
   }
 ];
 

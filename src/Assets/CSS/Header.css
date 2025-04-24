@@ -85,11 +85,11 @@
   gap: 0cm; /* Add space between logo and text */
 }
 .logo img {
-  width: 160px;
+  width: 170px;
   height: auto;
 }
 .company-name {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
   font-family:  'Georgia', serif;
   color: #003366;
