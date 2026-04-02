@@ -1,140 +1,105 @@
-/* Enhance the carousel container */
-.carousel-container {
-  max-width: 70%; /* Adjust width as needed */
-  margin: 0 auto; /* Center the carousel */
-  margin-bottom: 30px; /* Space below the carousel */
-}
-
-/* Enhanced Carousel */
-.enhanced-carousel {
-  max-height: 700px; /* Increased height for a more prominent display */
-  overflow: hidden;  /* Hide overflow content */
-  border-radius: 15px; /* Rounded corners for a sleek look */
-}
-.enhanced-carousel .carousel-item img {
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-  height: 100%; /* Set height for the image */
-  border-radius: 15px; /* Match the border radius */
-}
-
-/* Carousel Caption */
-.carousel-caption {
-  bottom: 20px; /* Position caption near the bottom */
-}
-
-.carousel-caption-text {
+/* Hero Carousel */
+.hero-carousel {
   position: relative;
-  white-space: nowrap;
-  overflow: hidden;
-  height: 60px; /* Adjust height as needed */
-  display: flex;
-  align-items: center;
 }
 
-.caption-line {
-  display: inline-block;
-  white-space: nowrap;
-  font-size: 1.5rem; /* Adjust font size as needed */
-  color: #fff; /* Font color */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Text shadow for better visibility */
-  animation: moveText 10s linear infinite; /* Move animation */
-  line-height: 1.5; /* Line height to handle multiple lines */
-}
-
-.caption-line.highlighted {
-  font-weight: bold; /* Highlighted text style */
-  font-size: 1.8rem; /* Larger font size for highlighted text */
-  color: #f5c518; /* Highlight color */
-}
-
-@keyframes moveText {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.carousel-caption-text .caption-line.highlighted {
-  animation: moveText 10s linear infinite;
-}
-
-.carousel-caption-text .caption-line {
-  animation: moveText 10s linear infinite;
-  animation-delay: 5s; /* Delay to start the second text animation */
-}
-.swiper {
-  width: 80%;
-  height: 700px;
-  border-radius: 20px;
+.mySwiper {
+  width: 100%;
+  height: 75vh;
+  min-height: 400px;
+  max-height: 700px;
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .swiper-slide-content {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   height: 100%;
 }
 
 .swiper-slide-content img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .caption {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background:transparent;
-  padding: 10px;
-  border-radius: 10px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 100%);
+  padding: 20px;
 }
 
-.caption h2 {
-  margin: 0;
-  font-size: 2rem;
+.caption-line1 {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  animation: captionFadeIn 0.6s ease;
 }
 
-.caption p {
-  margin: 0;
-  font-size: 1.2rem;
+.caption-line2 {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 24px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  animation: captionFadeIn 0.6s ease 0.15s both;
 }
-/* Add this CSS for the title */
+
+.caption-cta {
+  display: inline-block;
+  padding: 12px 32px;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+  animation: captionFadeIn 0.6s ease 0.3s both;
+}
+
+.caption-cta:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+@keyframes captionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Common */
+.section-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
 .section-title {
-  font-family: 'Poppins', sans-serif; /* Modern font */
-  font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
   text-align: center;
-  color: #2d3748;
-  margin-bottom: 2rem;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-  text-transform: capitalize;
+  color: var(--color-primary);
+  margin: 0 0 12px;
   position: relative;
-  padding-bottom: 0.5em;
+  padding-bottom: 16px;
 }
 
 .section-title::after {
@@ -143,64 +108,67 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
+  width: 60px;
   height: 3px;
-  background: #4299e1; /* Accent color */
+  background: var(--color-accent);
   border-radius: 2px;
 }
 
-/* Add this to your CSS imports or HTML head */
-/* <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"> */
-.key-stakeholders {
+.section-subtitle {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 16px auto 40px;
+  line-height: 1.7;
+}
+
+/* Stakeholders */
+.stakeholders-section {
+  padding: 48px 0;
   overflow: hidden;
-  padding: 2rem 0;
-  background: transparent;
-  position: relative;
+  background: var(--color-bg-light);
 }
 
 .logo-track {
   display: flex;
-  width: 200%; /* Double width for seamless transition */
-  animation: scroll 20s linear infinite;
+  width: 200%;
+  animation: scrollLogos 20s linear infinite;
+  margin-top: 24px;
 }
 
 .logo-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 50%; /* Half of track width */
-  gap: 4rem; /* Control spacing between logos */
-  padding: 1rem 0;
+  width: 50%;
+  gap: 48px;
+  padding: 12px 0;
 }
 
 .stakeholder-logo {
-  width: 120px; /* Adjust logo size */
-  height: auto;
+  width: 100px;
+  height: 64px;
   object-fit: contain;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition);
+  filter: grayscale(30%);
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%); /* Move by half width */
-  }
+.stakeholder-logo:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
 }
 
-/* Optional: Pause on hover */
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .logo-track:hover {
   animation-play-state: paused;
 }
 
-/* Optional: Hover effect */
-.stakeholder-logo:hover {
-  transform: scale(1.1);
-}
-
-/* Accessibility: Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .logo-track {
     animation: none;
@@ -211,57 +179,134 @@
   }
 }
 
-/* "Our Achievements" Section */
-.achievements-section {
-  padding: 40px 0;
-  background-color: transparent; /* Light background */
+/* Services */
+.services-section {
+  padding: 64px 0;
+  background: var(--color-bg);
 }
 
-.achievements-title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #003366;
-  margin-bottom: 20px;
-  text-align: center; /* Center the title */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
-.achievements-description {
-  font-size: 16px;
-  color: #555;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  text-align: center; /* Center the description */
+.service-card {
+  display: block;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.achievements-logos .logo-container {
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.service-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.service-card:hover .service-card-img img {
+  transform: scale(1.05);
+}
+
+.service-card-body {
+  padding: 16px 20px;
   display: flex;
-  justify-content: center; /* Center the logos horizontally */
-  align-items: center; /* Center logos vertically */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  gap: 30px; /* Space between logos */
-  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.service-card-body h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.service-card-arrow {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  transition: transform var(--transition);
+}
+
+.service-card:hover .service-card-arrow {
+  transform: translateX(4px);
+}
+
+/* Achievements */
+.achievements-section {
+  padding: 64px 0;
+  background: var(--color-bg-section);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 24px;
+  align-items: center;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 20px 16px;
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.achievement-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .achievement-logo {
-  width: 150px; /* Adjust the size */
-  height: auto;
-  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 120px;
+  height: 60px;
   object-fit: contain;
 }
 
-.achievement-logo:hover {
-  transform: scale(1.1); /* Zoom effect on hover */
+/* Responsive */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Media Query for Responsive Design */
-@media (max-width: 768px) {
-  .achievements-logos .logo-container {
-    flex-direction: row; /* Keep them in a row on mobile too */
-    align-items: center;
-    gap: 20px; /* Adjust the space for mobile */
+@media (max-width: 576px) {
+  .mySwiper {
+    height: 50vh;
+    min-height: 300px;
   }
-  .achievement-logo {
-    width: 120px; /* Slightly smaller on mobile */
-    margin-bottom: 20px;
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 16px;
+  }
+
+  .achievement-item {
+    padding: 12px;
   }
 }

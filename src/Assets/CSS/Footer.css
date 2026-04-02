@@ -1,154 +1,159 @@
 .footer {
-  background: linear-gradient(to right, black, #001133);
-  color: white;
-  padding: 20px 0;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0f2d5e 100%);
+  color: #cbd5e1;
+  padding: 48px 0 0;
+  margin-top: auto;
 }
 
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+  gap: 32px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px 40px;
 }
 
-.footer-logo img {
-  width: 150px;
-}
-
-.footer-links,
-.footer-contact,
-.footer-social {
-  margin: 20px 0;
-  flex: 1;
-  min-width: 200px;
-  text-align: center; /* Center-align content for smaller screens */
-}
-
-.footer-links h3,
-.footer-contact h3,
-.footer-social h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+.footer-heading {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
   text-transform: uppercase;
-  color: #dc3545; /* Matches the text-danger class */
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 10px;
 }
 
-.footer-links ul,
-.footer-social ul {
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 1px;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #94a3b8;
+}
+
+.footer-links ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-links li,
-.footer-social li {
-  margin-bottom: 10px;
+.footer-links li {
+  margin-bottom: 8px;
 }
 
-.footer-links a,
-.footer-contact a {
-  color: #fff;
+.footer-links a {
+  color: #cbd5e1;
   text-decoration: none;
-  transition: color 0.3s;
+  font-size: 0.9rem;
+  transition: color var(--transition), padding-left var(--transition);
 }
 
-.footer-links a:hover,
-.footer-contact a:hover {
-  color: #ddd;
+.footer-links a:hover {
+  color: #fff;
+  padding-left: 4px;
 }
 
 .footer-contact p {
-  margin: 5px 0;
-}
-
-.footer-social ul {
   display: flex;
-  justify-content: center; /* Center-align social icons */
-  gap: 10px;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-.footer-social a {
+.footer-icon {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--color-accent);
+}
+
+.footer-contact a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-contact a:hover {
   color: #fff;
-  font-size: 1.5rem;
-  transition: color 0.3s;
 }
 
-.footer-social a:hover {
-  color: #ddd;
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-size: 1rem;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.social-icons a:hover {
+  background: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Footer Bottom */
 .footer-bottom {
   text-align: center;
-  margin-top: 20px;
-  padding-top: 10px;
-  border-top: 1px solid #444;
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  color: #64748b;
 }
 
-/* Adjustments for screens 768px or smaller */
+/* Responsive */
 @media (max-width: 768px) {
   .footer-container {
-      flex-direction: column;
-      align-items: center;
-      padding: 0 10px; /* Reduce padding for smaller screens */
-  }
-
-  .footer-links,
-  .footer-contact,
-  .footer-social {
-      margin: 10px 0;
-      text-align: center;
-  }
-
-  .footer-logo img {
-      width: 120px; /* Reduce logo size for smaller screens */
-  }
-
-  .footer-links h3,
-  .footer-contact h3,
-  .footer-social h3 {
-      font-size: 1rem; /* Adjust heading font size for smaller screens */
-  }
-
-  .footer-social ul {
-      gap: 8px; /* Reduce gap between social icons */
-  }
-
-  .footer-social a {
-      font-size: 1.2rem; /* Adjust icon size for smaller screens */
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
   }
 }
 
-/* Further adjustments for screens 480px or smaller */
 @media (max-width: 480px) {
   .footer-container {
-      padding: 0 5px; /* Further reduce padding for very small screens */
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
-  .footer-links,
-  .footer-contact,
-  .footer-social {
-      min-width: 100%; /* Ensure full-width blocks on small screens */
-      margin: 10px 0;
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .footer-links li,
-  .footer-social li {
-      margin-bottom: 8px; /* Reduce margin between items */
+  .footer-contact p {
+    justify-content: center;
   }
 
-  .footer-links a,
-  .footer-contact a {
-      font-size: 0.9rem; /* Adjust link font size */
-  }
-
-  .footer-bottom p {
-      font-size: 0.8rem; /* Adjust bottom text size */
+  .social-icons {
+    justify-content: center;
   }
 }

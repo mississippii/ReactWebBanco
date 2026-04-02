@@ -1,107 +1,150 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../CSS/Header.css';
 import logo from '../../Assets/Images/Logo.jpeg';
-import { Link, NavLink } from 'react-router-dom';
-import { Nav } from 'react-bootstrap';
-import { FaBars } from 'react-icons/fa'; // Import the hamburger icon
+import { NavLink } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Header = () => {
-  const [isDownloadsDropdownOpen, setIsDownloadsDropdownOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage the hamburger menu
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isDownloadsOpen, setIsDownloadsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const downloadsDropdownRef = useRef(null);
-  const servicesDropdownRef = useRef(null);
+  const servicesRef = useRef(null);
+  const downloadsRef = useRef(null);
 
-  const toggleDropdown = (dropdownSetter) => {
-    dropdownSetter((prevState) => !prevState);
-  };
-
-  const closeDropdowns = () => {
-    setIsDownloadsDropdownOpen(false);
-    setIsServicesDropdownOpen(false);
-  };
-
-  const handleClickOutside = (event) => {
-    if (
-      downloadsDropdownRef.current &&
-      !downloadsDropdownRef.current.contains(event.target)
-    ) {
-      setIsDownloadsDropdownOpen(false);
-    }
-    if (
-      servicesDropdownRef.current &&
-      !servicesDropdownRef.current.contains(event.target)
-    ) {
-      setIsServicesDropdownOpen(false);
-    }
+  const closeAll = () => {
+    setIsServicesOpen(false);
+    setIsDownloadsOpen(false);
+    setIsMenuOpen(false);
   };
 
   useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target)) {
+        setIsServicesOpen(false);
+      }
+      if (downloadsRef.current && !downloadsRef.current.contains(e.target)) {
+        setIsDownloadsOpen(false);
+      }
+    };
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
     document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('scroll', handleScroll);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  const navLinkClass = ({ isActive }) =>
+    `nav-link ${isActive ? 'active-link' : ''}`;
+
   return (
-    <header className="header">
-      <div className="logo">
-        <NavLink to="/" className="logo-link">
+    <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
+      <div className="header-inner">
+        <NavLink to="/" className="logo-link" onClick={closeAll}>
           <div className="logo-flex">
-            <img src={logo} alt="Banco Logo" className="logo-image" />
+            <img src={logo} alt="SIM Capital Limited Logo" className="logo-image" />
             <span className="company-name">SIM Capital Limited</span>
           </div>
         </NavLink>
+
+        <button
+          className="menu-icon"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
+        >
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+          <ul className="nav-list">
+            <li className="nav-item">
+              <NavLink to="/" className={navLinkClass} onClick={closeAll} end>
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/about" className={navLinkClass} onClick={closeAll}>
+                About
+              </NavLink>
+            </li>
+            <li
+              className={`nav-item dropdown ${isServicesOpen ? 'open' : ''}`}
+              ref={servicesRef}
+            >
+              <button
+                className="nav-link dropdown-toggle"
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                aria-expanded={isServicesOpen}
+              >
+                Services
+              </button>
+              {isServicesOpen && (
+                <ul className="dropdown-menu">
+                  <li>
+                    <NavLink to="/services/portfolio" className="dropdown-item" onClick={closeAll}>
+                      Portfolio Management
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/services/issue-management" className="dropdown-item" onClick={closeAll}>
+                      Issue Management
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/services/corporate-advisory" className="dropdown-item" onClick={closeAll}>
+                      Corporate Advisory
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/services/underwriting" className="dropdown-item" onClick={closeAll}>
+                      Underwriting of Shares
+                    </NavLink>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li
+              className={`nav-item dropdown ${isDownloadsOpen ? 'open' : ''}`}
+              ref={downloadsRef}
+            >
+              <button
+                className="nav-link dropdown-toggle"
+                onClick={() => setIsDownloadsOpen(!isDownloadsOpen)}
+                aria-expanded={isDownloadsOpen}
+              >
+                Downloads
+              </button>
+              {isDownloadsOpen && (
+                <ul className="dropdown-menu">
+                  <li>
+                    <NavLink to="/downloads/public-offering" className="dropdown-item" onClick={closeAll}>
+                      Public Offering
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/downloads/bo-forms" className="dropdown-item" onClick={closeAll}>
+                      BO Related Forms
+                    </NavLink>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li className="nav-item">
+              <NavLink to="/contact" className={navLinkClass} onClick={closeAll}>
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <FaBars /> {/* Render the hamburger icon */}
-      </div>
-      <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-        <ul className="nav-list">
-          <li className="nav-item">
-            <NavLink to="/" activeClassName="active-link" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="/about" activeClassName="active-link" className="nav-link" onClick={() => setIsMenuOpen(false)}>About</NavLink>
-          </li>
-          <li
-            className={`nav-item dropdown ${isServicesDropdownOpen ? 'open' : ''}`}
-            ref={servicesDropdownRef}
-            onClick={() => toggleDropdown(setIsServicesDropdownOpen)}
-          >
-            <span className="nav-link dropdown-toggle" role="button">
-              Services
-            </span>
-            {isServicesDropdownOpen && (
-              <ul className="dropdown-menu">
-                <li><Nav.Link as={Link} to="/services" className="dropdown-item" onClick={() => { closeDropdowns(); setIsMenuOpen(false); }}>Portfolio Management</Nav.Link></li>
-                <li><NavLink to="/service2" className="dropdown-item" onClick={() => { closeDropdowns(); setIsMenuOpen(false); }}>Issue Management</NavLink></li>
-                <li><NavLink to="/service3" className="dropdown-item" onClick={() => { closeDropdowns(); setIsMenuOpen(false); }}>Corporate Advisory</NavLink></li>
-                <li><NavLink to="/service4" className="dropdown-item" onClick={() => { closeDropdowns(); setIsMenuOpen(false); }}>Underwriting of Share</NavLink></li>
-              </ul>
-            )}
-          </li>
-          <li
-            className={`nav-item dropdown ${isDownloadsDropdownOpen ? 'open' : ''}`}
-            ref={downloadsDropdownRef}
-            onClick={() => toggleDropdown(setIsDownloadsDropdownOpen)}
-          >
-            <span className="nav-link dropdown-toggle" role="button">
-              Downloads
-            </span>
-            {isDownloadsDropdownOpen && (
-              <ul className="dropdown-menu">
-                <li><NavLink to="/download1" className="dropdown-item" onClick={() => { closeDropdowns(); setIsMenuOpen(false); }}>Public Offering</NavLink></li>
-                <li><NavLink to="/download2" className="dropdown-item" onClick={() => { closeDropdowns(); setIsMenuOpen(false); }}>Bo Related Form</NavLink></li>
-              </ul>
-            )}
-          </li>
-          <li className="nav-item">
-            <NavLink to="/contact" activeClassName="active-link" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
-          </li>
-        </ul>
-      </nav>
     </header>
   );
 };

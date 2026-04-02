@@ -1,3 +1,4 @@
+import './Assets/CSS/App.css';
 import Route from './Route';
 
 function App() {
